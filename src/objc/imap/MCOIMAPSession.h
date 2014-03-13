@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 MailCore. All rights reserved.
 //
 
-#ifndef __MAILCORE_MCOIMAPSESSION_H_
+#ifndef MAILCORE_MCOIMAPSESSION_H
 
-#define __MAILCORE_MCOIMAPSESSION_H_
+#define MAILCORE_MCOIMAPSESSION_H
 
 #import <Foundation/Foundation.h>
 #import <MailCore/MCOConstants.h>
@@ -137,6 +137,11 @@
  }];
 */
 @property (nonatomic, copy) MCOOperationQueueRunningChangeBlock operationQueueRunningChangeBlock;
+
+/**
+ Cancel all operations
+ */
+- (void) cancelAllOperations;
 
 /** @name Folder Operations */
 
@@ -411,6 +416,7 @@
      }];
 
 @warn *Important*: This is only for servers that support Conditional Store. See [RFC4551](http://tools.ietf.org/html/rfc4551)
+vanishedMessages will be set only for servers that support QRESYNC. See [RFC5162](http://tools.ietf.org/html/rfc5162)
 */
 - (MCOIMAPFetchMessagesOperation *) syncMessagesByUIDWithFolder:(NSString *)folder
                                                     requestKind:(MCOIMAPMessagesRequestKind)requestKind

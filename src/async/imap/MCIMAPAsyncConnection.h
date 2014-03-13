@@ -1,6 +1,6 @@
-#ifndef __MAILCORE_MCIMAPASYNCCONNECTION_H
+#ifndef MAILCORE_MCIMAPASYNCCONNECTION_H
 
-#define __MAILCORE_MCIMAPASYNCCONNECTION_H
+#define MAILCORE_MCIMAPASYNCCONNECTION_H
 
 #include <MailCore/MCBaseTypes.h>
 #include <MailCore/MCMessageConstants.h>
@@ -167,6 +167,7 @@ namespace mailcore {
         virtual void runOperation(IMAPOperation * operation);
         virtual IMAPSession * session();
         
+        virtual void cancelAllOperations();
         virtual unsigned int operationsCount();
         
         virtual void setLastFolder(String * folder);

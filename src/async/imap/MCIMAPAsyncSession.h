@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 MailCore. All rights reserved.
 //
 
-#ifndef __MAILCORE_MCIMAPACCOUNT_H_
+#ifndef MAILCORE_MCIMAPACCOUNT_H
 
-#define __MAILCORE_MCIMAPACCOUNT_H_
+#define MAILCORE_MCIMAPACCOUNT_H
 
 #include <MailCore/MCBaseTypes.h>
 #include <MailCore/MCMessageConstants.h>
@@ -97,6 +97,7 @@ namespace mailcore {
         virtual void setOperationQueueCallback(OperationQueueCallback * callback);
         virtual OperationQueueCallback * operationQueueCallback();
         virtual bool isOperationQueueRunning();
+        virtual void cancelAllOperations();
         
         virtual IMAPIdentity * serverIdentity();
         virtual IMAPIdentity * clientIdentity();
